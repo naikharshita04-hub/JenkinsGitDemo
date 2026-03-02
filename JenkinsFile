@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('fetch file') {
             steps {
-               git 'https://github.com/Pranna-Nadar/webhooks_git'
+               git 'https://github.com/naikharshita04-hub/JenkinsGitDemo.git'
             }
         }
         stage('Build file') {
