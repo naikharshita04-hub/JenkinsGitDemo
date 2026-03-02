@@ -1,1 +1,36 @@
 
+pipeline {
+    agent any
+    stages {
+        stage('fetch file') {
+            steps {
+               git 'https://github.com/Pranna-Nadar/webhooks_git'
+            }
+        }
+        stage('Build file') {
+            steps {
+                echo 'Building project...'
+                bat 'javac HelloWorld.java'
+            }
+        }
+        stage('executing') {
+            steps {
+                echo 'executing project...'
+                bat 'java HelloWorld'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying project...'
+            }
+        }
+    }
+    post {
+        success {
+            echo 'pipeline executed successfully'
+        }
+        failure {
+            echo 'pipeline failed'
+        }
+    }
+}
