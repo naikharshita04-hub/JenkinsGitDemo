@@ -10,7 +10,7 @@ agent any
       steps{
       publishHTML([
         allowMissing:true,
-        alwaysLinktoLastBuild:false,
+        alwaysLinkToLastBuild:false,
         KeepAll:false,
         reportDir:'.',
         reportFiles:'index.html',  
